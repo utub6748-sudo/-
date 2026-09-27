@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.serialization")
@@ -24,7 +26,7 @@ android {
         debug { applicationIdSuffix = ".debug"; versionNameSuffix = "-debug" }
     }
 
-    val localProperties = java.util.Properties().apply {
+    val localProperties = Properties().apply {
         val file = rootProject.file("local.properties")
         if (file.exists()) file.inputStream().use { load(it) }
     }
@@ -41,11 +43,9 @@ android {
 
 kotlin { jvmToolchain(17) }
 
-val composeBom = platform("androidx.compose:compose-bom:2026.09.00")
-
 dependencies {
-    implementation(composeBom)
-    androidTestImplementation(composeBom)
+    implementation(platform("androidx.compose:compose-bom:2026.09.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2026.09.00"))
     implementation("androidx.core:core-ktx:1.19.0")
     implementation("androidx.activity:activity-compose:1.13.0")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.11.0")
