@@ -63,3 +63,6 @@ jobs:
           path: Astro-Android-1.0.0-GitHub-Actions/Astro/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
+
+      - name: Build trigger
+        run: echo "APK build requested at $(date -u +%FT%TZ)"
