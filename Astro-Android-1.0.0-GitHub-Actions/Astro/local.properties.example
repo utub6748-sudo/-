@@ -1,0 +1,4 @@
+# Copy the values below into local.properties (do not commit real secrets).
+ASTRO_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+ASTRO_SUPABASE_KEY=YOUR_PUBLISHABLE_OR_ANON_KEY
+ASTRO_AI_BASE_URL=https://YOUR_PROJECT.supabase.co/functions/v1/ai-chat
